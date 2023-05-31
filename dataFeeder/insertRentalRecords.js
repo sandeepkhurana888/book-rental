@@ -11,11 +11,11 @@ async function insertRentalRecords() {
       // Insert the rental document
       const result = await rentalsCollection.insertMany(
         [{
-            "customerId" : "customerD",
+            "customerId" : "customerA",
             "books" : [{"bookType": "novel","count": 6, "duration" : 2},{"bookType": "regular","count": 1,"duration" : 1},{"bookType": "fiction","count": 1,"duration" : 3}]
         },
         {
-            "customerId" : "customerE",
+            "customerId" : "customerB",
             "books" : [{"bookType": "novel","count": 2, "duration" : 2},{"bookType": "regular","count": 1,"duration" : 1}]
         }]
       );
