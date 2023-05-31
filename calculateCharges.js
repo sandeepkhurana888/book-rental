@@ -15,6 +15,12 @@ async function calculateCharges(customerId) {
     let statement = {};
     statement.charges=[];
     statement.totalCharges = 0;
+    if(!rentals){
+      console.log("No records found")
+      closeConnection()
+        return;
+    }
+    
 
     for(let book of rentals.books){
       let bookCharge = 0;
@@ -34,7 +40,6 @@ async function calculateCharges(customerId) {
     statement.totalCharges = totalCharges;
     console.log("Statement generated", statement);
     createCSV(statement)
-    // Close the MongoDB connection
     closeConnection()
   } catch (error) {
     console.error('Error:', error);
@@ -44,8 +49,8 @@ async function calculateCharges(customerId) {
 
       
   
-calculateCharges('customerA');
-
+calculateCharges('customer');
+module.exports = {calculateCharges};
 
 
 

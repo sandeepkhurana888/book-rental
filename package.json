@@ -4,8 +4,9 @@
   "description": "",
   "main": "calculateCharges.js",
   "dependencies": {
-    "mongodb": "^5.5.0",
-    "csv-writer": "^1.6.0"
+    "csv-writer": "^1.6.0",
+    "jest": "^29.5.0",
+    "mongodb": "^5.5.0"
   },
   "devDependencies": {},
   "scripts": {
