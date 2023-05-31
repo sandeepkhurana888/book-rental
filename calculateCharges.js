@@ -1,7 +1,13 @@
 const {connectToMongoDB, getDB,closeConnection} = require('./db/mongoConnection');
 const createCSV = require('./utility/csvGenerator');
 
-const perDayCharge = 1;
+
+const chargesPerdayConfig = {
+  "regular" : 1.5,
+  "fiction" : 3,
+  "novel" : 1.5
+} 
+
 
       async function calculateCharges(customerId) {
         try {
@@ -16,6 +22,8 @@ const perDayCharge = 1;
 
           for(let book of rentals.books){
             let bookCharge = 0;
+            let perDayCharge;
+            perDayCharge = chargesPerdayConfig[book.bookType]
             bookCharge = perDayCharge*book.duration;
             book.charges = book.count*bookCharge;
             totalCharges+=book.charges;
