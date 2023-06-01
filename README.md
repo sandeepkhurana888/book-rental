@@ -1,6 +1,6 @@
 # book-rental
 
-# How data is stored in database:
+How data is stored in database:
 db Used is MongoDB and there are 2 collections.
 1. rentals collection: This stores customer's information what all books are rented by customer.
 2. rental_charges collection: This contains required book rental data such as rent per day charges, minimum charges and other metadata which can be modified as per requirement at later stage of time
